@@ -19,13 +19,13 @@ body {
   border:5px solid #1086e8;
   width:90vw;
   margin: 5vw;
-  top:40vh;
+  top:20vh;
   border-radius:20px;
   animation: border-flicker 2s linear infinite;
 }
 
 #text h1 {
-  color:#FF00E6;
+  color:red;
   font-family: 'Raleway', sans-serif;
   font-size:4vh;
   letter-spacing:10px;
@@ -177,138 +177,138 @@ box-shadow: 0px 0px 78px 4px rgba(16,134,232,0.73);
 
 
 
-/* SWITCH */
-.cube-switch {
-    border-radius:10px;
-    border:1px solid rgba(0,0,0,0.4);
-    box-shadow: 0 0 8px rgba(0,0,0,0.6), inset 0 100px 50px rgba(255,255,255,0.1);
-    /* Prevents clics on the back */
-    cursor:default;    
-    display: block;
-    height: 100px;
-    position: absolute;
-    top:60vh;
-    left:20%;
-    margin: 5% 0px 0px 10%;
-    overflow:hidden;
-    /* Prevents clics on the back */
-    pointer-events:none;
-    width: 100px;
-    white-space: nowrap;
-    background:#333;
+
+
+
+* {
+  box-sizing: border-box;
+  transition: all 300ms ease-in-out;
 }
 
-/* The switch */
-.cube-switch .switch {
-    border:1px solid rgba(0,0,0,0.6);
-    border-radius:0.7em;
-    box-shadow:
-    inset 0 1px 0 rgba(255,255,255,0.3),
-    inset 0 -7px 0 rgba(0,0,0,0.2),
-    inset 0 50px 10px rgba(0,0,0,0.2),
-    0 1px 0 rgba(255,255,255,0.2);
-    display:block;
-    width: 60px;
-    height: 60px;
-    margin-left:-30px;
-    margin-top:-30px;
-    position:absolute;
-    top: 50%;
-    left: 50%;
-    width: 60px;
- 
-    background:#666;
-    transition: all 0.2s ease-out;
-
-    /* Allows click */
-    cursor:pointer;
-    pointer-events:auto;
+html, body {
+  background: #000;
 }
 
-/* SWITCH Active State */
-.cube-switch.active {
-    /*background:#222;
-    box-shadow:
-    0 0 5px rgba(0,0,0,0.5),
-    inset 0 50px 50px rgba(55,55,55,0.1);*/
+.bg {
+  position: absolute;
+  background: none;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(#145b78, transparent);
+  opacity: 0;
 }
 
-.cube-switch.active .switch {
-    background:#333;
-    box-shadow:
-    inset 0 6px 0 rgba(255,255,255,0.1),
-    inset 0 7px 0 rgba(0,0,0,0.2),
-    inset 0 -50px 10px rgba(0,0,0,0.1),
-    0 1px 0 rgba(205,205,205,0.1);
+.bg-color {
+  opacity: 1;
 }
 
-.cube-switch.active:after,
-.cube-switch.active:before {
-    background:#333; 
-    box-shadow:
-    0 1px 0 rgba(255,255,255,0.1),
-    inset 1px 2px 1px rgba(0,0,0,0.5),
-    inset 3px 6px 2px rgba(200,200,200,0.1),
-    inset -1px -2px 1px rgba(0,0,0,0.3);
+.container {
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
 }
 
-.cube-switch.active .switch:after,
-.cube-switch.active .switch:before {
-    background:#222;
-    border:none;
-    margin-top:0;
-    height:1px;
+.saber {
+  position: relative;
+  transition: all 500ms ease-in-out;
+}
+.saber .blade {
+  height: 0;
+  background: skyblue;
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px;
+  box-shadow: 0 0 20px skyblue;
+}
+.saber .hilt {
+  height: 100px;
+  width: 20px;
+  border: 1px solid #333;
+  background: repeating-linear-gradient(to right, #333, #333 2px, black 2px, black 4px);
+  border-top: 4px solid #4d4d4d;
+  border-bottom: 4px solid #4d4d4d;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+.saber .hilt:hover {
+  cursor: pointer;
+}
+.saber .hilt .button {
+  height: 20px;
+  width: 8px;
+  border: 2px solid #333;
+  background: skyblue;
+  position: relative;
+  top: 30%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+.saber .on {
+  height: 500px;
+  -webkit-transition: all 300ms ease-in-out;
 }
 
-.cube-switch .switch-state {
-    display: block;
-    position: absolute;
-    left: 40%;
-    color: #FFF;
-
-    font-size: .5em;
-    text-align: center;
+.wobble {
+  -webkit-animation: wiggle 2.5s ease-in-out infinite;
+          animation: wiggle 2.5s ease-in-out infinite;
+  -webkit-animation-delay: 3s;
+          animation-delay: 3s;
 }
 
-/* SWITCH On State */
-.cube-switch .switch-state.on {
-    bottom: 15%;
+@-webkit-keyframes wiggle {
+  0% {
+    -webkit-transform: rotateZ(0deg);
+            transform: rotateZ(0deg);
+  }
+  5% {
+    -webkit-transform: rotateZ(5deg);
+            transform: rotateZ(5deg);
+  }
+  10%, 15% {
+    -webkit-transform: rotateZ(-5deg);
+            transform: rotateZ(-5deg);
+  }
+  15%, 100% {
+    -webkit-transform: rotateZ(0deg);
+            transform: rotateZ(0deg);
+  }
 }
 
-/* SWITCH Off State */
-.cube-switch .switch-state.off {
-    top: 15%;
-}
-
-#light-bulb2 {
-width: 150px;
-height: 150px;
-background: url(https://lh4.googleusercontent.com/-katLGTSCm2Q/UJC0_N7XCrI/AAAAAAAABq0/6GxNfNW-Ra4/s300/lightbulb.png) no-repeat 0 0;
-}
-
-#light-bulb {
-position: absolute;
-width: 150px;
-height: 150px;
-top: 5%;
-left: 40%;
-background: url(https://lh4.googleusercontent.com/-katLGTSCm2Q/UJC0_N7XCrI/AAAAAAAABq0/6GxNfNW-Ra4/s300/lightbulb.png) no-repeat -150px 0;
-cursor: move;
-z-index: 800;
+@keyframes wiggle {
+  0% {
+    -webkit-transform: rotateZ(0deg);
+            transform: rotateZ(0deg);
+  }
+  5% {
+    -webkit-transform: rotateZ(5deg);
+            transform: rotateZ(5deg);
+  }
+  10%, 15% {
+    -webkit-transform: rotateZ(-5deg);
+            transform: rotateZ(-5deg);
+  }
+  15%, 100% {
+    -webkit-transform: rotateZ(0deg);
+            transform: rotateZ(0deg);
+  }
 }
 
 
 </style></head><body>
 <div style="display:none" id="text">
-  <h1>SCIN<span id="offset">TIL</span>LATE</h1>
+  <h1 style="color:white; font-size:100px">SCIN<span id="offset">TIL</span>LATE</h1>
 </div>
 
-
- <div href="" class="cube-switch">
-        <span class="switch">
-            <span class="switch-state off">Off</span>
-            <span class="switch-state on">On</span>
-        </span>
+<div class="bg"></div>
+<div class="container">
+  <div class="saber wobble">
+    <div class="blade"></div>
+    <div class="hilt">
+      <div class="button"></div>
+    </div>
+  </div>
 </div>
 
 
@@ -348,7 +348,17 @@ $('.cube-switch .switch').click(function() {
 
     });
 
+
+
+$('.hilt').on('click', function() {
+    $('#text').toggle()
+  $('.blade').toggleClass('on');
+  $('.bg').toggleClass('bg-color');
+  $('.saber').toggleClass('wobble');
+});
+
 </script>
+
 
 
 
