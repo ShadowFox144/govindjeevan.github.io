@@ -1,0 +1,359 @@
+
+<!DOCTYPE html><html lang='en' class=''>
+
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+
+
+<style class="cp-pen-styles">@import url('https://fonts.googleapis.com/css?family=Raleway');
+body {
+  background-color:black;
+}
+
+#text {
+  text-align:center;
+  position:absolute;
+  border:5px solid #1086e8;
+  width:90vw;
+  margin: 5vw;
+  top:40vh;
+  border-radius:20px;
+  animation: border-flicker 2s linear infinite;
+}
+
+#text h1 {
+  color:#FF00E6;
+  font-family: 'Raleway', sans-serif;
+  font-size:4vh;
+  letter-spacing:10px;
+  animation: text-flicker 3s linear infinite;
+}
+
+#offset {
+  animation: letter-flicker 2s linear infinite;
+}
+
+@keyframes text-flicker {
+  0% {
+    opacity:0.1;
+    text-shadow: 0px 0px 29px rgba(242, 22, 22, 1);
+  }
+  
+  2% {
+    opacity:1;
+    text-shadow: 0px 0px 29px rgba(242, 22, 22, 1);
+  }
+  8% {
+    opacity:0.1;
+    text-shadow: 0px 0px 29px rgba(242, 22, 22, 1);
+  }
+  9% {
+    opacity:1;
+    text-shadow: 0px 0px 29px rgba(242, 22, 22, 1);
+  }
+  12% {
+    opacity:0.1;
+    text-shadow: 0px 0px rgba(242, 22, 22, 1);
+  }
+  20% {
+    opacity:1;
+    text-shadow: 0px 0px 29px rgba(242, 22, 22, 1)
+  }
+  25% {
+    opacity:0.3;
+    text-shadow: 0px 0px 29px rgba(242, 22, 22, 1)
+  }
+  30% {
+    opacity:1;
+    text-shadow: 0px 0px 29px rgba(242, 22, 22, 1)
+  }
+  
+  70% {
+    opacity:0.7;
+    text-shadow: 0px 0px 29px rgba(242, 22, 22, 1)
+  }
+  
+  72% {
+    opacity:0.2;
+    text-shadow:0px 0px 29px rgba(242, 22, 22, 1)
+  }
+  
+  77% {
+    opacity:.9;
+    text-shadow: 0px 0px 29px rgba(242, 22, 22, 1)
+  }
+  100% {
+    opacity:.9;
+    text-shadow: 0px 0px 29px rgba(242, 22, 22, 1)
+  }
+}
+
+@keyframes border-flicker {
+  0% {
+    opacity:0.1;
+    -webkit-box-shadow: 0px 0px 78px 4px rgba(16,134,232,0.73);
+-moz-box-shadow: 0px 0px 78px 4px rgba(16,134,232,0.73);
+box-shadow: 0px 0px 78px 4px rgba(16,134,232,0.73);
+  }
+  2% {
+    opacity:1;
+    -webkit-box-shadow: 0px 0px 78px 4px rgba(16,134,232,0.73);
+-moz-box-shadow: 0px 0px 78px 4px rgba(16,134,232,0.73);
+box-shadow: 0px 0px 78px 4px rgba(16,134,232,0.73);
+  }
+  4% {
+    opacity:0.1;
+    -webkit-box-shadow: 0px 0px 78px 4px rgba(16,134,232,0.73);
+-moz-box-shadow: 0px 0px 78px 4px rgba(16,134,232,0.73);
+box-shadow: 0px 0px 78px 4px rgba(16,134,232,0.73);
+  }
+  
+  8% {
+    opacity:1;
+    -webkit-box-shadow: 0px 0px 78px 4px rgba(16,134,232,0.73);
+-moz-box-shadow: 0px 0px 78px 4px rgba(16,134,232,0.73);
+box-shadow: 0px 0px 78px 4px rgba(16,134,232,0.73);
+  }
+  70% {
+    opacity:0.7;
+    -webkit-box-shadow: 0px 0px 78px 4px rgba(16,134,232,0.73);
+-moz-box-shadow: 0px 0px 78px 4px rgba(16,134,232,0.73);
+box-shadow: 0px 0px 78px 4px rgba(16,134,232,0.73);
+  }
+  100% {
+    opacity:1;
+    -webkit-box-shadow: 0px 0px 78px 4px rgba(16,134,232,0.73);
+-moz-box-shadow: 0px 0px 78px 4px rgba(16,134,232,0.73);
+box-shadow: 0px 0px 78px 4px rgba(16,134,232,0.73);
+  }
+}
+
+@keyframes letter-flicker {
+  0% {
+    opacity:0.1;
+    text-shadow: 0px 0px 29px rgba(242, 22, 22, 1);
+  }
+  2% {
+    opacity:0.1;
+    text-shadow: 0px 0px 29px rgba(242, 22, 22, 1);
+  }
+  4% {
+    opacity:1;
+    text-shadow: 0px 0px 29px rgba(242, 22, 22, 1);
+  }
+  
+  
+  19% {
+    opacity:1;
+    text-shadow: 0px 0px 29px rgba(242, 22, 22, 1);
+  }
+  21% {
+    opacity:0.1;
+    text-shadow: 0px 0px 29px rgba(242, 22, 22, 1);
+  }
+  23% {
+    opacity:1;
+    text-shadow: 0px 0px 29px rgba(242, 22, 22, 1);
+  }
+  
+  80% {
+    opacity:1;
+    text-shadow: 0px 0px 29px rgba(242, 22, 22, 1);
+  }
+  83% {
+    opacity:0.4;
+    text-shadow: 0px 0px 29px rgba(242, 22, 22, 1);
+  }
+  87% {
+    opacity:1;
+    text-shadow: 0px 0px 29px rgba(242, 22, 22, 1);
+  }
+}
+
+
+
+
+
+/* SWITCH */
+.cube-switch {
+    border-radius:10px;
+    border:1px solid rgba(0,0,0,0.4);
+    box-shadow: 0 0 8px rgba(0,0,0,0.6), inset 0 100px 50px rgba(255,255,255,0.1);
+    /* Prevents clics on the back */
+    cursor:default;    
+    display: block;
+    height: 100px;
+    position: absolute;
+    top:60vh;
+    left:20%;
+    margin: 5% 0px 0px 10%;
+    overflow:hidden;
+    /* Prevents clics on the back */
+    pointer-events:none;
+    width: 100px;
+    white-space: nowrap;
+    background:#333;
+}
+
+/* The switch */
+.cube-switch .switch {
+    border:1px solid rgba(0,0,0,0.6);
+    border-radius:0.7em;
+    box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.3),
+    inset 0 -7px 0 rgba(0,0,0,0.2),
+    inset 0 50px 10px rgba(0,0,0,0.2),
+    0 1px 0 rgba(255,255,255,0.2);
+    display:block;
+    width: 60px;
+    height: 60px;
+    margin-left:-30px;
+    margin-top:-30px;
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    width: 60px;
+ 
+    background:#666;
+    transition: all 0.2s ease-out;
+
+    /* Allows click */
+    cursor:pointer;
+    pointer-events:auto;
+}
+
+/* SWITCH Active State */
+.cube-switch.active {
+    /*background:#222;
+    box-shadow:
+    0 0 5px rgba(0,0,0,0.5),
+    inset 0 50px 50px rgba(55,55,55,0.1);*/
+}
+
+.cube-switch.active .switch {
+    background:#333;
+    box-shadow:
+    inset 0 6px 0 rgba(255,255,255,0.1),
+    inset 0 7px 0 rgba(0,0,0,0.2),
+    inset 0 -50px 10px rgba(0,0,0,0.1),
+    0 1px 0 rgba(205,205,205,0.1);
+}
+
+.cube-switch.active:after,
+.cube-switch.active:before {
+    background:#333; 
+    box-shadow:
+    0 1px 0 rgba(255,255,255,0.1),
+    inset 1px 2px 1px rgba(0,0,0,0.5),
+    inset 3px 6px 2px rgba(200,200,200,0.1),
+    inset -1px -2px 1px rgba(0,0,0,0.3);
+}
+
+.cube-switch.active .switch:after,
+.cube-switch.active .switch:before {
+    background:#222;
+    border:none;
+    margin-top:0;
+    height:1px;
+}
+
+.cube-switch .switch-state {
+    display: block;
+    position: absolute;
+    left: 40%;
+    color: #FFF;
+
+    font-size: .5em;
+    text-align: center;
+}
+
+/* SWITCH On State */
+.cube-switch .switch-state.on {
+    bottom: 15%;
+}
+
+/* SWITCH Off State */
+.cube-switch .switch-state.off {
+    top: 15%;
+}
+
+#light-bulb2 {
+width: 150px;
+height: 150px;
+background: url(https://lh4.googleusercontent.com/-katLGTSCm2Q/UJC0_N7XCrI/AAAAAAAABq0/6GxNfNW-Ra4/s300/lightbulb.png) no-repeat 0 0;
+}
+
+#light-bulb {
+position: absolute;
+width: 150px;
+height: 150px;
+top: 5%;
+left: 40%;
+background: url(https://lh4.googleusercontent.com/-katLGTSCm2Q/UJC0_N7XCrI/AAAAAAAABq0/6GxNfNW-Ra4/s300/lightbulb.png) no-repeat -150px 0;
+cursor: move;
+z-index: 800;
+}
+
+
+</style></head><body>
+<div style="display:none" id="text">
+  <h1>SCIN<span id="offset">TIL</span>LATE</h1>
+</div>
+
+
+ <div href="" class="cube-switch">
+        <span class="switch">
+            <span class="switch-state off">Off</span>
+            <span class="switch-state on">On</span>
+        </span>
+</div>
+
+
+
+</body></html>
+
+<script>
+
+function on()
+    {
+        var text=document.getElementById("text")
+        text.style.display="block"
+        console.log(text)
+    }
+</script>
+
+
+
+
+
+
+  <script type="text/javascript">
+
+
+    $(function(){
+      
+$('.cube-switch .switch').click(function() {
+    if ($('.cube-switch').hasClass('active')) {
+        $('.cube-switch').removeClass('active');
+    } else {
+        $('.cube-switch').addClass('active');
+    }
+
+    $('#text').toggle()
+    
+});
+
+    });
+
+</script>
+
+
+
+
+
+
+
+
