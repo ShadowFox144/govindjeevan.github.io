@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang='en' class=''>
+<meta charset='UTF-8'><meta name="robots" content="noindex">
+
+
+<style class="cp-pen-styles">body {
+  background: black;
+}
+/* Helmet */
+.border {
+  border: 1px solid #222;
+}
+.hidden {
+  display: none;
+}
+.helmet {
+  width: 400px;
+  height: 500px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.helmet__top {
+  position: absolute;
+  z-index: 2;
+  display: block;
+  top: 50px;
+  width: 20px;
+  height: 170px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  border-bottom-left-radius: 80% 20%;
+  border-bottom-right-radius: 80% 20%;
+}
+.helmet__top:before,
+.helmet__top:after {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 130px;
+  height: 150px;
+  top: 5px;
+  z-index: -1;
+}
+.helmet__top:before {
+  right: 0;
+  border-top-left-radius: 130px;
+  background: linear-gradient(to right, gray, #333, #222 100px, #222 110px, gray 112px, gray 115px, #222 116px);
+}
+.helmet__top:after {
+  left: 10px;
+  border-top-right-radius: 130px;
+  background: linear-gradient(to right, #222, #222 9px, gray 9px, gray 10px, #222 12px, black 60px);
+}
+.helmet__front {
+  position: absolute;
+  z-index: 5;
+  display: block;
+  top: 175px;
+  width: 20px;
+  height: 40px;
+}
+.helmet__front:before,
+.helmet__front:after {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 135px;
+  height: 60px;
+  background: #222;
+  -webkit-clip-path: polygon(140px 40px, 75px 30px, 40px 40px, 20px 48px, 5px 60px, 10px 40px, 40px 15px, 75px 2px, 100px 3px, 125px 10px, 140px 20px);
+          clip-path: polygon(140px 40px, 75px 30px, 40px 40px, 20px 48px, 5px 60px, 10px 40px, 40px 15px, 75px 2px, 100px 3px, 125px 10px, 140px 20px);
+}
+.helmet__front:before {
+  right: 12px;
+}
+.helmet__front:after {
+  left: 14px;
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+}
+.helmet__back {
+  position: absolute;
+  z-index: 1;
+  top: 200px;
+  width: 400px;
+  height: 250px;
+  border-bottom: 1px solid #333;
+  border-bottom-left-radius: 80% 20%;
+  border-bottom-right-radius: 80% 20%;
+  -webkit-clip-path: polygon(20% 0%, 82% 0%, 102% 100%, -2% 100%);
+          clip-path: polygon(20% 0%, 82% 0%, 102% 100%, -2% 100%);
+  background: linear-gradient(75deg, transparent, transparent 340px, #333 370px, black 380px), linear-gradient(105deg, black, black 50px, #333 75px, black 110px);
+}
+.helmet__eyes {
+  position: absolute;
+  z-index: 4;
+  width: 15px;
+  height: 50px;
+  top: 200px;
+  background: linear-gradient(to bottom, transparent 0px, transparent 15px, #111 15px, #ccc 20px, #111 23px, #111 25px, #111 25px, #ccc 30px, #111 33px, #111 35px, #111 35px, #ccc 40px, #111 43px, #111 45px, transparent 45px);
+}
+.helmet__eyes::before,
+.helmet__eyes::after {
+  content: '';
+  position: absolute;
+  width: 105px;
+  height: 73px;
+  border-top-left-radius: 50% 40%;
+  border-top-right-radius: 50% 70%;
+  border-bottom-left-radius: 50% 40%;
+  border-bottom-right-radius: 50% 30%;
+}
+.helmet__eyes::before {
+  left: 15px;
+  background-image: radial-gradient(circle, #111 60%, #ccc);
+  background-position: 8px 10px;
+}
+.helmet__eyes::after {
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+  right: 15px;
+  background-image: linear-gradient(80deg, transparent, transparent 20px, #111 30px, #111 50px, transparent 65px, #111 80px), linear-gradient(45deg, black, silver);
+}
+.helmet__nose {
+  position: absolute;
+  z-index: 4;
+  top: 280px;
+  width: 20px;
+  height: 20px;
+  border-top-left-radius: 100%;
+  border-top-right-radius: 100%;
+  border: 5px solid #222;
+  border-bottom: none;
+  background: silver;
+}
+.helmet__nose:after {
+  background: linear-gradient(93deg, transparent, transparent 5px, silver 8px, transparent 15px), linear-gradient(to right, #333, #333);
+  background-position: 0px -5px, 0px 0px;
+  background-repeat: no-repeat, no-repeat;
+  content: '';
+  display: block;
+  position: relative;
+  top: -40px;
+  width: 25px;
+  height: 40px;
+  -webkit-transform: translatex(-50%);
+          transform: translatex(-50%);
+  left: 50%;
+  -webkit-clip-path: polygon(0px 40px, 25px 40px, 20px 0px, 5px 0px);
+          clip-path: polygon(0px 40px, 25px 40px, 20px 0px, 5px 0px);
+}
+.helmet__cheekbone {
+  position: absolute;
+  top: 285px;
+  width: 200px;
+  height: 80px;
+  z-index: 3;
+}
+.helmet__cheekbone:before,
+.helmet__cheekbone:after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  width: 100px;
+  height: 70px;
+  background: #333;
+  background: linear-gradient(to top, black, #333);
+  -webkit-clip-path: polygon(0px 5px, 25px 2px, 50px 0px, 75px 2px, 100px 5px, 100px 12px, 80px 20px, 75px 23px, 60px 32px, 50px 40px, 40px 48px, 30px 58px, 20px 70px, 13px 40px);
+          clip-path: polygon(0px 5px, 25px 2px, 50px 0px, 75px 2px, 100px 5px, 100px 12px, 80px 20px, 75px 23px, 60px 32px, 50px 40px, 40px 48px, 30px 58px, 20px 70px, 13px 40px);
+}
+.helmet__cheekbone:before {
+  left: 0px;
+}
+.helmet__cheekbone:after {
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+  right: 0px;
+}
+.helmet__face {
+  border: 1px solid #222;
+  position: absolute;
+  top: 200px;
+  width: 250px;
+  height: 300px;
+  background: gray;
+  z-index: 2;
+  border-bottom-left-radius: 40% 50%;
+  border-bottom-right-radius: 40% 50%;
+  -webkit-clip-path: polygon(15px 50px, 235px 50px, 250px 60px, 225px 90px, 200px 150px, 240px 140px, 190px 180px, 250px 300px, 0px 300px, 60px 180px, 10px 140px, 50px 150px, 25px 90px, 0px 60px);
+          clip-path: polygon(15px 50px, 235px 50px, 250px 60px, 225px 90px, 200px 150px, 240px 140px, 190px 180px, 250px 300px, 0px 300px, 60px 180px, 10px 140px, 50px 150px, 25px 90px, 0px 60px);
+  background: linear-gradient(black 20%, #333 70%, transparent), linear-gradient(100deg, black, black 30px, transparent 150px, black 240px), linear-gradient(to right, black, black 20px, #ccc 90px);
+}
+.helmet__mouth {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  width: 135px;
+  height: 100px;
+  position: relative;
+  z-index: 3;
+  top: 75px;
+}
+.helmet__mouth:after,
+.helmet__mouth:before {
+  border: 1px solid #222;
+  content: '';
+  width: 12px;
+  height: 12px;
+  position: absolute;
+  z-index: 1;
+  bottom: -2px;
+  background: silver;
+  border-radius: 100%;
+  box-shadow: inset -1px -1px white;
+}
+.helmet__mouth:after {
+  left: -1px;
+}
+.helmet__mouth:before {
+  right: -1px;
+}
+.helmet__mouth .helmet__mouth_front {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  background-image: linear-gradient(to right, #333, #333 15px, transparent 15px, transparent 22px, #333 22px, #333 37px, transparent 37px, transparent 47px, #333 47px, #333 62px, transparent 62px, transparent 72px, #333 72px, #333 87px, transparent 87px, transparent 97px, #333 97px, #333 112px, transparent 112px, transparent 119px, #333 119px), linear-gradient(to left, rgba(158, 158, 158, 0.7), 0px, rgba(158, 158, 158, 0.7)), repeating-linear-gradient(transparent, transparent 2px, #333 2px, #333 4px), repeating-linear-gradient(45deg, transparent, transparent 2px, #333 2px, #333 4px), linear-gradient(to left, silver 0px, silver);
+  -webkit-clip-path: polygon(10px 95px, 67.5px 10px, 125px 95px);
+          clip-path: polygon(10px 95px, 67.5px 10px, 125px 95px);
+}
+.helmet__mouth .helmet__mouth_back {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: #222;
+  -webkit-clip-path: polygon(0% 100%, 50% 0%, 100% 100%);
+          clip-path: polygon(0% 100%, 50% 0%, 100% 100%);
+}
+.helmet__mouth .helmet__mouth_bottom {
+  position: absolute;
+  bottom: -50px;
+  display: block;
+  width: 135px;
+  height: 50px;
+  background: #333;
+  -webkit-clip-path: polygon(0% 0%, 100% 0%, 50% 100%);
+          clip-path: polygon(0% 0%, 100% 0%, 50% 100%);
+}
+.helmet__mouth .helmet__mouth_bottom:before {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  background-image: linear-gradient(to left, rgba(158, 158, 158, 0.7), 0px, rgba(158, 158, 158, 0.7)), repeating-linear-gradient(transparent, transparent 2px, #333 2px, #333 4px), repeating-linear-gradient(45deg, transparent, transparent 2px, #333 2px, #333 4px), linear-gradient(to left, silver 0px, silver);
+  -webkit-clip-path: polygon(25% 25%, 75% 25%, 50% 70%);
+          clip-path: polygon(25% 25%, 75% 25%, 50% 70%);
+}
+/* Lightsaber */
+.lightsaber {
+  position: relative;
+  z-index: 50;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  top: 40vh;
+  width: 40px;
+  height: 300px;
+  border-top-left-radius: 50px;
+  background: linear-gradient(to right, transparent, black 60px), linear-gradient(to top, transparent, transparent 120px, #DBCEC6 100px, #DBCEC6 250px, black 250px), linear-gradient(to right, black, black 10px, transparent 10px, transparent 15px, black 15px, black 25px, transparent 25px, transparent 30px, black 30px), linear-gradient(to top, transparent, transparent 5px, gray 5px, gray 8px, transparent 8px, transparent 13px, gray 13px, gray 16px, transparent 16px, transparent 21px, gray 21px, gray 24px, transparent 24px), linear-gradient(#DBCEC6, #DBCEC6);
+}
+.lightsaber:before {
+  content: '';
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 100px;
+  width: 60px;
+  height: 50px;
+  background: linear-gradient(to right, transparent, transparent 3px, black 3px, black 10px, #DBCEC6 10px, #DBCEC6 19px, black 19px), repeating-linear-gradient(#DBCEC6 5px, black 5px, black 10px, #DBCEC6 10px, #DBCEC6 15px);
+}
+.lightsaber:after {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 40px;
+  width: 50px;
+  height: 60px;
+  background: radial-gradient(farthest-side at 10px 25px, black 5px, transparent 5px), radial-gradient(farthest-side at 10px 35px, black 5px, transparent 5px);
+}
+.lightsaber:hover {
+  cursor: pointer;
+}
+.buttons {
+  position: absolute;
+  width: 5px;
+  height: 60px;
+  display: block;
+  background: black;
+  right: -5px;
+  top: 20px;
+}
+.buttons:before,
+.buttons:after {
+  content: '';
+  display: block;
+  position: relative;
+  width: 0px;
+  height: 0px;
+  border: 7px solid transparent;
+  border-right: 7px solid #DBCEC6;
+  left: -3px;
+}
+.buttons:before {
+  top: 5px;
+}
+.buttons:after {
+  top: 15px;
+}
+.laser {
+  display: block;
+  position: absolute;
+  right: 20px;
+  bottom: 265px;
+  height: 0px;
+  width: 20px;
+  background: linear-gradient(to right, red, #F6F3EC, red);
+  -webkit-transform: translateX(50%);
+          transform: translateX(50%);
+  transition: all 0.3s;
+  z-index: 0;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  box-shadow: 0px 0px 10px 4px red;
+}
+.laser.on {
+  height: 700px;
+  box-shadow: 0px 0px 20px 8px red;
+}
+.hoverlaser {
+  display: block;
+  position: absolute;
+  overflow: hidden;
+  top: 0px;
+  width: 100%;
+  height: 50px;
+  background: black;
+  border-top-left-radius: 50px;
+  z-index: 2;
+}
+.bgmask {
+  position: absolute;
+  z-index: 50;
+  top: -115vh;
+  left: -125vw;
+  width: 250vw;
+  height: 250vh;
+  background: blue;
+  background: radial-gradient(transparent, transparent 20%, black 45%);
+}
+.cont {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  display: block;
+  width: 100vw;
+  height: 100vh;
+  background: #333;
+  overflow: hidden;
+  transition: all 0.3s;
+}
+.cont.show {
+  background: radial-gradient(rgba(255, 0, 0, 0.2), black 85%);
+}
+.text {
+  position: absolute;
+  z-index: 200;
+  width: 100vw;
+  height: 50px;
+  color: white;
+  bottom: 0;
+  text-align: center;
+  font-family: 'Arial';
+}
+.text.hide {
+  display: none;
+}
+</style></head><body>
+<div class="helmet">
+  <div class="helmet__top"></div>
+  <div class="helmet__front"></div>
+  <div class="helmet__back"></div>
+  <div class="helmet__eyes"></div>
+  <div class="helmet__nose"></div>
+  <div class="helmet__cheekbone"></div>
+  <div class="helmet__face"></div>
+  <div class="helmet__mouth">
+    <div class="helmet__mouth_back"></div>
+    <div class="helmet__mouth_front"></div>
+    <div class="helmet__mouth_bottom"></div>
+  </div>
+</div>
+<div class="cont">
+  <div class="lightsaber">
+    <div class="buttons"></div>
+    <div class="laser"></div>
+    <div class="hoverlaser"></div>
+     <div class="bgmask"></div>    
+  </div>   
+</div>
+<div class="text">Click and drag the lightsaber.<br>Please, turn on the speakers for a better experience.</div>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script><script src='https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js'></script>
+<script >var soundOn = document.createElement("audio");
+soundOn.setAttribute("src", 'https://www.interactius.com/wp-content/uploads/2017/05/lightsaberon.mp3');
+var soundOff = document.createElement("audio");
+soundOff.setAttribute("src", 'https://www.interactius.com/wp-content/uploads/2017/05/lightsaberoff.mp3');
+var soundBreath = document.createElement("audio");
+soundBreath.setAttribute("src", 'https://www.thesoundarchive.com/starwars/star-wars-theme-song.mp3');
+
+
+$(".lightsaber").draggable({ revert: true });
+
+$('.lightsaber').on('mousedown touchstart', function () {
+     $('.laser').addClass('on');
+     soundOn.play();
+     $('.cont').addClass('show');
+     soundBreath.play();
+     $('.text').addClass('hidden');
+});
+
+$('.lightsaber').on('mouseup touchend', function () {
+     $('.laser').removeClass('on');
+     soundBreath.pause();
+     soundBreath.currentTime = 0;
+     soundOff.play();
+     $('.cont').removeClass('show');
+     $('.text').removeClass('hidden');
+});
+</script>
+</body></html>
