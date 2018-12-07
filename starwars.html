@@ -160,10 +160,12 @@ body {
 }
 .text {
   position: absolute;
+  padding: 10px;
   z-index: 200;
   width: 100vw;
   height: 50px;
   color: white;
+  background: black;
   bottom: 0;
   text-align: center;
   font-family: 'Arial';
@@ -172,19 +174,6 @@ body {
   display: none;
 }
 
-.text2 {
-  position: absolute;
-  width: 100vw;
-  height: 50px;
-  color: white;
-  margin-top:40vh;
-  opacity: .8;
-  text-align: center;
-  font-family: 'Arial';
-}
-.text2.hide {
-  display: none;
-}
 
 
 
@@ -206,9 +195,7 @@ body {
     <div class="bgmask"></div>  
   </div>   
 </div>
-<div class="text">Click and drag the lightsaber.<br>Please, turn on the speakers for a better experience.</div>
-<div class="text2 hidden">/ˈsɪntɪleɪt/<br>
-emit flashes of light; sparkle.</div>
+<div class="text">Try dragging the Lightsaber.<br>Use a desktop and turn on the speakers for a better experience. <strong>Click here to scroll.</strong></div>
 
 <div class="star-wars-intro">
 
@@ -216,16 +203,17 @@ emit flashes of light; sparkle.</div>
   <div class="main-content">
 
     <div class="title-content">
-      <p class="content-header">EPISODES IV-VI<br/>A Movie Marathon</p>
+      <p class="content-header"><span style="font-size:80px; color:red">TEDx</span><br/>NITKSurathkal</p>
 
       <br>
 
       <p class="content-body">
-        After years of galactic silence, civilization is on the brink of a new Star Wars release. Now, with the Force preparing to awaken, the people of Earth seek solace in films of old. With nowhere to turn, they gather in great numbers and watch the original trilogy without rest. Three films. 6 hours. 24 minutes. Popcorn. Slushies. Total elation.
+
+        Our world is progressing towards an exciting future, surpassing challenges that were once thought to be impossible to overcome. This drives us to the promise of coming up with new ideas and better solutions to the problems we continue to face even today. To SCINTILLATE is to emit flashes of light; sparkles. Sometimes a spark is all it takes to set minds on the path towards revolutionary ideas. Come with witness the fireworks, as TEDxNITKSurathkal scintillates on..
       </p>
 
       <!-- button or link or whatever -->
-      <a href="./StarScroll.zip" class="space-button">18xJan19!</a>
+      <a href="./StarScroll.zip" class="space-button">18x January 2019</a>
         
     </div>
   </div>
@@ -248,13 +236,22 @@ soundBreath.setAttribute("src", 'https://www.thesoundarchive.com/starwars/star-w
 
 $(".lightsaber").draggable({ revert: true });
 
+$(document).ready(function() {
+   
+    $('.text').click(function(){
+        $('html, body').animate({scrollTop:999}, 'slow');
+        return false;
+    });
+
+});
+
+
 $('.lightsaber').on('mousedown touchstart', function () {
      $('.laser').addClass('on');
      soundOn.play();
      $('.cont').addClass('show');
      soundBreath.play();
      $('.text').addClass('hidden');
-     $('.text2').removeClass('hidden');
      
 });
 
@@ -265,7 +262,6 @@ $('.lightsaber').on('mouseup touchend', function () {
      soundOff.play();
      $('.cont').removeClass('show');
      $('.text').removeClass('hidden');
-     $('.text2').addClass('hidden');
      
 });
 </script>
