@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang='en' class=''>
 <meta charset='UTF-8'><meta name="robots" content="noindex">
-
+<link rel="stylesheet" type="text/css" href="starwarsintro.css"> 
 
 <style>
 
@@ -172,12 +172,31 @@ body {
   display: none;
 }
 
+.text2 {
+  position: absolute;
+  width: 100vw;
+  height: 50px;
+  color: white;
+  margin-top:40vh;
+  opacity: .8;
+  text-align: center;
+  font-family: 'Arial';
+}
+.text2.hide {
+  display: none;
+}
+
 
 
 </style></head><body>
 <div style="" class="helmet">
     <img style="height:auto; width:40vw"src="unnamed.png">
-    <img style="height:auto; width:80vw"src="scintillate.png">
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <img style="height:auto; width:80vw"src="plaintext1.png">
 </div>
 <div class="cont">
   <div class="lightsaber">
@@ -188,6 +207,31 @@ body {
   </div>   
 </div>
 <div class="text">Click and drag the lightsaber.<br>Please, turn on the speakers for a better experience.</div>
+<div class="text2 hidden">/ˈsɪntɪleɪt/<br>
+emit flashes of light; sparkle.</div>
+
+<div class="star-wars-intro">
+
+  <!-- All Scrolling Content Goes in here -->
+  <div class="main-content">
+
+    <div class="title-content">
+      <p class="content-header">EPISODES IV-VI<br/>A Movie Marathon</p>
+
+      <br>
+
+      <p class="content-body">
+        After years of galactic silence, civilization is on the brink of a new Star Wars release. Now, with the Force preparing to awaken, the people of Earth seek solace in films of old. With nowhere to turn, they gather in great numbers and watch the original trilogy without rest. Three films. 6 hours. 24 minutes. Popcorn. Slushies. Total elation.
+      </p>
+
+      <!-- button or link or whatever -->
+      <a href="./StarScroll.zip" class="space-button">18xJan19!</a>
+        
+    </div>
+  </div>
+</div>
+
+
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js'></script>
 <script>
@@ -210,15 +254,19 @@ $('.lightsaber').on('mousedown touchstart', function () {
      $('.cont').addClass('show');
      soundBreath.play();
      $('.text').addClass('hidden');
+     $('.text2').removeClass('hidden');
+     
 });
 
-// $('.lightsaber').on('mouseup touchend', function () {
-//      $('.laser').removeClass('on');
-//      soundBreath.pause();
-//      soundBreath.currentTime = 0;
-//      soundOff.play();
-//      $('.cont').removeClass('show');
-//      $('.text').removeClass('hidden');
-// });
+$('.lightsaber').on('mouseup touchend', function () {
+     $('.laser').removeClass('on');
+     soundBreath.pause();
+     soundBreath.currentTime = 0;
+     soundOff.play();
+     $('.cont').removeClass('show');
+     $('.text').removeClass('hidden');
+     $('.text2').addClass('hidden');
+     
+});
 </script>
 </body></html>
